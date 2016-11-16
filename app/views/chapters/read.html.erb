@@ -10,6 +10,11 @@
   </div>
 
   <div class="col-md-10">
+
+    <div class="clearfix">
+        <%= link_to("EDIT", edit_book_chapter_path(@book, @chapter), :class => "btn btn-default pull-right" ) %>
+    </div>
+    <br>
     <div class="well">
           <%= @chapter.content.to_markdown %>
 
