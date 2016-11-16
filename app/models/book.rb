@@ -1,5 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
+
+  mount_uploader :file, EbookUploader
 end
 
 # == Schema Information
@@ -11,4 +13,5 @@ end
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  file       :string
 #

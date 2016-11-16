@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i(show edit update destroy)
-  before_action :authenticate_user!, only: %i(new create update edit destroy)
+  before_action :set_book, only: %i(show edit update destroy new_import create_import)
+  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import)
   # GET /books
   # GET /books.json
   def index
@@ -12,6 +12,17 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+  end
+
+  def new_import
+  end
+
+  def create_import
+    if @book.update(book_params)
+      redirect_to @book, notice: "Book was successfully updated."
+    else
+      render :edit
+    end
   end
 
   def edit
@@ -48,6 +59,6 @@ class BooksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def book_params
-    params.require(:book).permit(:title)
+    params.require(:book).permit(:title, :file)
   end
 end
