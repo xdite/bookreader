@@ -5,6 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :books
+
+  def admin?
+    is_admin
+  end
 end
 
 # == Schema Information
@@ -24,6 +28,7 @@ end
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  is_admin               :boolean          default(FALSE)
 #
 # Indexes
 #
