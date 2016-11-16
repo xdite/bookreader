@@ -11,4 +11,9 @@ class ParsedChaptersController < ApplicationController
 
     redirect_to @book
   end
+
+  def read
+    @book = Book.find(params[:book_id])
+    @chapter = @book.parsed_chapters.find(params[:id])
+  end
 end

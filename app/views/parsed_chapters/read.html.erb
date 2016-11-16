@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-2">
+    <ul>
+
+    <% @book.readable_chapters.each do |chapter| %>
+        <li> <%= link_to(chapter.id, read_book_parsed_chapter_path(@book,chapter) )%> </li>
+    <% end %>
+    </ul>
+
+  </div>
+
+  <div class="col-md-10">
+    <div class="well">
+          <%= @chapter.translated_content.to_markdown %>
+
+    </div>
+  </div>
+</div>

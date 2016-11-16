@@ -30,6 +30,8 @@ gem "fog"
 gem "epub-parser"
 gem "easy_translate"
 
+gem "ultra_markdown", github: "rocodev/ultra_markdown"
+
 gem "delayed_job_active_record"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

@@ -10,7 +10,7 @@ class Book < ApplicationRecord
   end
 
   def readable_chapters
-    parsed_chapters.where("words_count > ?", 1000)
+    parsed_chapters.where("words_count > ?", 1000).order("id ASC")
   end
 end
 
