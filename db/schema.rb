@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116124752) do
+ActiveRecord::Schema.define(version: 20161116132806) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "file"
+    t.integer  "parsed_chapters_count", default: 0
   end
 
   create_table "parsed_chapters", force: :cascade do |t|
