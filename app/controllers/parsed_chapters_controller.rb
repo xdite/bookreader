@@ -7,7 +7,7 @@ class ParsedChaptersController < ApplicationController
   def translate
     @book = Book.find(params[:book_id])
     @parsed_chapter = @book.parsed_chapters.find(params[:id])
-    @parsed_chapter.translate!
+    @parsed_chapter.delay.translate!
 
     redirect_to @book
   end
