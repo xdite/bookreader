@@ -7,6 +7,14 @@ class Chapter < ApplicationRecord
   def set_words_count
     self.words_count = content.length
   end
+
+  def title_for_displayed
+    if title.present?
+      "#{id}-#{title}"
+    else
+      id
+    end
+  end
 end
 
 # == Schema Information

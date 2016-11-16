@@ -1,0 +1,6 @@
+<ul>
+
+<% @book.chapters.each do |chapter| %>
+    <li> <%= link_to(chapter.title_for_displayed, read_book_chapter_path(@book,chapter) )%> </li>
+<% end %>
+</ul>
