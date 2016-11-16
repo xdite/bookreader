@@ -29,6 +29,8 @@ gem "carrierwave"
 
 gem "epub-parser"
 gem "easy_translate"
+
+gem "delayed_job_active_record"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
