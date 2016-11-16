@@ -8,6 +8,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @parsed_chapters = @book.parsed_chapters
   end
 
   def new
@@ -18,7 +19,8 @@ class BooksController < ApplicationController
   end
 
   def create_import
-    if @book.update(book_params)
+    if params[:book] && params[:book][:file].present?
+      @book.update(book_params)
       BookImporter.new(params[:book][:file].tempfile, @book).import!
       redirect_to @book, notice: "Book was successfully updated."
     else

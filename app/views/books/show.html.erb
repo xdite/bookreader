@@ -5,5 +5,23 @@
   <%= @book.title %>
 </p>
 
+<table class="table table-bordered">
+  <% @parsed_chapters.each do |chapter| %>
+    <tr>
+      <td width="2">
+        <%= chapter.id %>
+      </td>
+
+      <td width="20">
+        <%= truncate(chapter.content, :length => 2000) %>
+      </td>
+
+      <td>
+        <%= chapter.content.length %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

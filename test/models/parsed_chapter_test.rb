@@ -10,9 +10,10 @@ end
 #
 # Table name: parsed_chapters
 #
-#  id         :integer          not null, primary key
-#  content    :text
-#  book_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  content     :text
+#  book_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  words_count :integer          default(0)
 #
