@@ -8,6 +8,10 @@ class Book < ApplicationRecord
   def translate!
     parsed_chapters.where(is_translated: false).each(&:translate!)
   end
+
+  def readable_chapters
+    parsed_chapters.where("words_count > ?", 1000)
+  end
 end
 
 # == Schema Information
