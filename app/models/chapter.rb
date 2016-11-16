@@ -15,6 +15,24 @@ class Chapter < ApplicationRecord
       id
     end
   end
+
+  def current_position
+    book.all_chapters.index(id)
+  end
+
+  def prev_item
+    return nil if current_position.blank?
+
+    index = current_position - 1
+
+    return nil if index == -1
+    book.all_chapters[index]
+  end
+
+  def next_item
+    index = current_position + 1
+    book.all_chapters[index]
+  end
 end
 
 # == Schema Information

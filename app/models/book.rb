@@ -21,6 +21,16 @@ class Book < ApplicationRecord
       chapter.save
     end
   end
+
+  def all_chapters
+    total_chapters = []
+
+    chapters.each do |chapter|
+      total_chapters << chapter.id
+    end
+
+    total_chapters
+  end
 end
 
 # == Schema Information
