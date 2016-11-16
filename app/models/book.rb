@@ -6,7 +6,9 @@ class Book < ApplicationRecord
   has_many :parsed_chapters
 
   def translate!
-    parsed_chapters.where(is_translated: false).each(&:translate!)
+    parsed_chapters.where(is_translated: false) do |chapter|
+      chapter.delay.translate!
+    end
   end
 end
 
