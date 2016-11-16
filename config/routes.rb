@@ -6,9 +6,16 @@ Rails.application.routes.draw do
       post :translate
       get :preview
       post :convert
+      get :read
     end
 
     resources :parsed_chapters do
+      member do
+        get :read
+      end
+    end
+
+    resources :chapters do
       member do
         get :read
       end

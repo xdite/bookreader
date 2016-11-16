@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161116152125) do
     t.datetime "updated_at",                        null: false
     t.string   "file"
     t.integer  "parsed_chapters_count", default: 0
+    t.integer  "chapters_count",        default: 0
   end
 
   create_table "chapters", force: :cascade do |t|

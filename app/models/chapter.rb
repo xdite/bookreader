@@ -1,6 +1,12 @@
 class Chapter < ApplicationRecord
-  belongs_to :book
+  belongs_to :book, counter_cache: true
   acts_as_list scope: :book
+
+  before_update :set_words_count
+
+  def set_words_count
+    self.words_count = content.length
+  end
 end
 
 # == Schema Information

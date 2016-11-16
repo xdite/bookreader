@@ -9,6 +9,7 @@
 #  updated_at            :datetime         not null
 #  file                  :string
 #  parsed_chapters_count :integer          default(0)
+#  chapters_count        :integer          default(0)
 #
 
 require 'test_helper'

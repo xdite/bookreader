@@ -9,6 +9,7 @@
 </p>
 
 <div class="clearfix">
+  <%= link_to("READ", read_book_path(@book), :class => "btn btn-default pull-right" ) %>
   <%= link_to("Preview", preview_book_path(@book), :class => "btn btn-default pull-right" ) %>
   <%= link_to("Translate", translate_book_path(@book), :class => "btn btn-default pull-right", :method => :post ) %>
   <%= link_to("Convert", convert_book_path(@book), :class => "btn btn-default pull-right", :method => :post  ) %>
