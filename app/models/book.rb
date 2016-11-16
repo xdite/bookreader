@@ -7,7 +7,9 @@ class Book < ApplicationRecord
   has_many :chapters, -> { order(position: :asc) }
 
   def translate!
-    parsed_chapters.where(is_translated: false).each(&:translate!)
+    parsed_chapters.where(is_translated: false) do |chapter|
+      chapter.delay.translate!
+    end
   end
 
   def readable_chapters

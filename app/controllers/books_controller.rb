@@ -38,7 +38,7 @@ class BooksController < ApplicationController
   end
 
   def translate
-    @book.translate!
+    @book.delay.translate!
     redirect_to :back
   end
 
