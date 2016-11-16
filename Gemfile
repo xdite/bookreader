@@ -28,6 +28,7 @@ gem "font-awesome-rails"
 gem "carrierwave"
 
 gem "epub-parser"
+gem "easy_translate"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -41,6 +42,7 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "sqlite3"
   gem "annotate"
+  gem "dotenv-rails"
 end
 
 group :production do
