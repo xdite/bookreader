@@ -26,7 +26,7 @@ gem "simple_form"
 gem "devise"
 gem "font-awesome-rails"
 gem "carrierwave"
-
+gem "fog"
 gem "epub-parser"
 gem "easy_translate"
 
