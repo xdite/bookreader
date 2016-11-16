@@ -1,12 +1,12 @@
 require "epub/parser"
 class BookImporter
-  def initialize(book)
-    @file_path = book.file.path
+  def initialize(file, book)
+    @file = file
     @book = book
   end
 
   def import!
-    book_file = EPUB::Parser.parse(@file_path)
+    book_file = EPUB::Parser.parse(@file)
     book_content = []
     page_no = 0
     book_file.each_page_on_spine do |page|

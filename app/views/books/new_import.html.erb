@@ -1,7 +1,7 @@
 <%= simple_form_for @book, :url => create_import_book_path(@book), :method => :post do |f| %>
 
 
-  <%= f.input :file %>
+      <%= f.file_field :file %>
 
   <div class="actions">
     <%= f.submit %>

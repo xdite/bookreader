@@ -19,9 +19,11 @@ class BooksController < ApplicationController
 
   def create_import
     if @book.update(book_params)
+      BookImporter.new(params[:book][:file].tempfile, @book).import!
       redirect_to @book, notice: "Book was successfully updated."
     else
-      render :edit
+      flash[:alert] = "You need to upload something"
+      render :new_import
     end
   end
 
