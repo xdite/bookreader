@@ -2,6 +2,8 @@ class Book < ApplicationRecord
   belongs_to :user
 
   mount_uploader :file, EbookUploader
+
+  has_many :parse_chapters
 end
 
 # == Schema Information

@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  book_id: 1
+
+two:
+  content: MyText
+  book_id: 1
+
+# == Schema Information
+#
+# Table name: parsed_chapters
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  book_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
