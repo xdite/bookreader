@@ -17,4 +17,5 @@ end
 #  updated_at         :datetime         not null
 #  words_count        :integer          default(0)
 #  translated_content :text
+#  is_translated      :boolean          default(FALSE)
 #

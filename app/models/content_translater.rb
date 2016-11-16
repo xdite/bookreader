@@ -1,7 +1,5 @@
 require "easy_translate"
 
-EasyTranslate.api_key = ENV.fetch("GOOGLE_TRANSLATE_KEY")
-
 class ContentTranslater
   def initialize(chapter)
     @chapter = chapter
@@ -20,6 +18,7 @@ class ContentTranslater
       translated_content << "\n"
     end
     @chapter.translated_content = translated_content
+    @chapter.is_translated = true
     @chapter.save
   end
 end

@@ -6,6 +6,10 @@ class ParsedChapter < ApplicationRecord
   def set_words_count
     self.words_count = content.length
   end
+
+  def translate?
+    is_translated
+  end
 end
 
 # == Schema Information
@@ -19,4 +23,5 @@ end
 #  updated_at         :datetime         not null
 #  words_count        :integer          default(0)
 #  translated_content :text
+#  is_translated      :boolean          default(FALSE)
 #
