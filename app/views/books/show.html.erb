@@ -12,6 +12,11 @@
         <%= chapter.id %>
       </td>
 
+      <td width="2">
+        <%= link_to("Translate!", translate_book_parsed_chapter_path(@book, chapter)) %>
+      </td>
+
+
       <td width="20">
         <%= truncate(chapter.content, :length => 2000) %>
       </td>
@@ -19,6 +24,11 @@
       <td>
         <%= chapter.content.length %>
       </td>
+
+      <td width="20">
+        <%= truncate(chapter.translated_content, :length => 2000) %>
+      </td>
+
     </tr>
   <% end %>
 </table>

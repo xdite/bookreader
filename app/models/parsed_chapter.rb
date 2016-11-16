@@ -10,6 +10,10 @@ class ParsedChapter < ApplicationRecord
   def translate?
     is_translated
   end
+
+  def translate!
+    ContentTranslater.new(self).translate!
+  end
 end
 
 # == Schema Information
