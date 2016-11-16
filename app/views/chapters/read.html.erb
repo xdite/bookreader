@@ -28,5 +28,15 @@
           <%= @chapter.content.to_markdown %>
 
     </div>
+
+
+    <ul class="pager">
+      <li class="previous"> <%= render_prev_chapter_button(@chapter) %></li>
+      <li class="next"><%= render_next_chapter_button(@chapter) %>
+      </li>
+    </ul>
+
+
+
   </div>
 </div>
