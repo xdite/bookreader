@@ -4,6 +4,10 @@ class Book < ApplicationRecord
   mount_uploader :file, EbookUploader
 
   has_many :parsed_chapters
+
+  def translate!
+    parsed_chapters.where(is_translated: false).each(&:translate!)
+  end
 end
 
 # == Schema Information
@@ -17,5 +21,4 @@ end
 #  updated_at            :datetime         not null
 #  file                  :string
 #  parsed_chapters_count :integer          default(0)
-#  worlds_count          :integer          default(0)
 #

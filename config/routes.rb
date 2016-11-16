@@ -3,12 +3,10 @@ Rails.application.routes.draw do
     member do
       get :new_import
       post :create_import
+      post :translate
     end
 
     resources :parsed_chapters do
-      member do
-        get :translate
-      end
     end
   end
   devise_for :users

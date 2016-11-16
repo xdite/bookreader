@@ -17,5 +17,4 @@ end
 #  updated_at            :datetime         not null
 #  file                  :string
 #  parsed_chapters_count :integer          default(0)
-#  worlds_count          :integer          default(0)
 #

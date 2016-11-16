@@ -19,6 +19,7 @@ class ContentTranslater
     end
     @chapter.translated_content = translated_content
     @chapter.is_translated = true
+    @chapter.translated_words_count = @chapter.translated_content.size
     @chapter.save
   end
 end

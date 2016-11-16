@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i(show edit update destroy new_import create_import)
-  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import)
+  before_action :set_book, only: %i(show edit update destroy new_import create_import translate)
+  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import translate)
   # GET /books
   # GET /books.json
   def index
@@ -27,6 +27,11 @@ class BooksController < ApplicationController
       flash[:alert] = "You need to upload something"
       render :new_import
     end
+  end
+
+  def translate
+    @book.translate!
+    redirect_to :back
   end
 
   def edit
