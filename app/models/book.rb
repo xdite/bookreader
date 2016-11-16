@@ -4,6 +4,7 @@ class Book < ApplicationRecord
   mount_uploader :file, EbookUploader
 
   has_many :parsed_chapters
+  has_many :chapters, -> { order(position: :asc) }
 
   def translate!
     parsed_chapters.where(is_translated: false).each(&:translate!)

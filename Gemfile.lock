@@ -51,6 +51,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.8.2)
+      activerecord (>= 3.0)
     addressable (2.4.0)
     airbrake (5.6.1)
       airbrake-ruby (~> 1.6)
@@ -377,6 +379,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   annotate
   bootstrap-sass
   byebug

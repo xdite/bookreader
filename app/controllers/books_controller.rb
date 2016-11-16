@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i(show edit update destroy new_import create_import translate preview)
-  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import translate preview)
+  before_action :set_book, only: %i(show edit update destroy new_import create_import translate preview convert)
+  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import translate preview convert)
   # GET /books
   # GET /books.json
   def index
@@ -12,6 +12,11 @@ class BooksController < ApplicationController
   end
 
   def preview
+  end
+
+  def convert
+    @book.convert!
+    redirect_to :back
   end
 
   def new

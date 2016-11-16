@@ -30,6 +30,8 @@ gem "fog"
 gem "epub-parser"
 gem "easy_translate"
 
+gem "acts_as_list"
+
 gem "ultra_markdown", github: "rocodev/ultra_markdown"
 
 gem "delayed_job_active_record"

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       post :create_import
       post :translate
       get :preview
+      post :convert
     end
 
     resources :parsed_chapters do
