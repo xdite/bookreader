@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     member do
       get :new_import
       post :create_import
+      get :import
     end
   end
   devise_for :users

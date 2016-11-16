@@ -26,6 +26,8 @@ gem "simple_form"
 gem "devise"
 gem "font-awesome-rails"
 gem "carrierwave"
+
+gem "epub-parser"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

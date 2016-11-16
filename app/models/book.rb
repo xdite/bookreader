@@ -3,7 +3,7 @@ class Book < ApplicationRecord
 
   mount_uploader :file, EbookUploader
 
-  has_many :parse_chapters
+  has_many :parsed_chapters
 end
 
 # == Schema Information
