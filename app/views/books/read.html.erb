@@ -2,8 +2,8 @@
   <div class="col-md-2">
     <ul>
 
-    <% @book.readable_chapters.each do |chapter| %>
-        <li> <%= link_to(chapter.id, read_book_parsed_chapter_path(@book,chapter) )%> </li>
+    <% @book.chapters.each do |chapter| %>
+        <li> <%= link_to(chapter.id, read_book_chapter_path(@book,chapter) )%> </li>
     <% end %>
     </ul>
 
