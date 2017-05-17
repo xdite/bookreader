@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import translate preview convert read)
+  before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import translate preview convert)
   before_action :set_book, only: %i(edit update destroy new_import create_import translate convert)
 
   # GET /books
