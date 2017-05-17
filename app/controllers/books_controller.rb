@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: %i(new create update edit destroy new_import create_import translate preview convert read)
-  before_action :set_book, only: %i(show edit update destroy new_import create_import translate preview convert read)
+  before_action :set_book, only: %i(edit update destroy new_import create_import translate convert)
 
   # GET /books
   # GET /books.json
@@ -9,13 +9,16 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
     @parsed_chapters = @book.parsed_chapters
   end
 
   def preview
+    @book = Book.find(params[:id])
   end
 
   def read
+      @book = Book.find(params[:id])
   end
 
   def convert
