@@ -10,7 +10,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @parsed_chapters = @book.parsed_chapters
+    @parsed_chapters = @book.parsed_chapters.order("id DESC")
   end
 
   def preview
