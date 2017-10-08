@@ -10,9 +10,10 @@
 
 <div class="clearfix">
   <%= link_to("READ", read_book_path(@book), :class => "btn btn-default pull-right" ) %>
+  <%= link_to("Convert", convert_book_path(@book), :class => "btn btn-default pull-right", :method => :post  ) %>
   <%= link_to("Preview", preview_book_path(@book), :class => "btn btn-default pull-right" ) %>
   <%= link_to("Translate", translate_book_path(@book), :class => "btn btn-default pull-right", :method => :post ) %>
-  <%= link_to("Convert", convert_book_path(@book), :class => "btn btn-default pull-right", :method => :post  ) %>
+
 </div>
 <br>
 
@@ -23,15 +24,17 @@
         #
       </td>
       <td>
-        Length
+        原文大小
       </td>
       <td>
-        Status
+        翻譯狀態
       </td>
 
       <td>
-        Translated Word Count
+        翻譯後字數
       </td>
+
+      <td>Preview</td>
     </tr>
   </thead>
   <tbody>
@@ -54,6 +57,11 @@
         <%= chapter.translated_words_count %>
       </td>
 
+      <td>
+        <% if chapter.is_translated %>
+          <%= link_to(chapter.id, read_book_parsed_chapter_path(@book,chapter) )%> 
+        <% end %>
+      </td>
 
     </tr>
   <% end %>
